@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text } from "react-native";
 
-export default function Producto() {
+export default function ProductoBorrar() {
     return (
         <View>
-            <Text>Productos</Text>
+            <Text>Borrar Productos</Text>
         </View>
     );
 }
