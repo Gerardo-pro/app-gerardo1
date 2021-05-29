@@ -14,7 +14,7 @@ export default function Navigation() {
     return (
         <NavigationContainer>
         <Tab.Navigator
-          initialRouteName="menu"
+          initialRouteName="producto"
           tabBarOptions={{
             inactiveTintColor: "#646464",
             activeTintColor: "#00a680"
@@ -52,20 +52,17 @@ function screenOptions(route, color) {
   let iconName;
 
   switch (route.name) {
-    case "alumnos":
-      iconName = "account";
+    case "menu":
+      iconName = "home-variant";
       break;
-    case "grupos":
-      iconName = "account-group";
+    case "producto":
+      iconName = "cart";
       break;
-    case "maestros":
-      iconName = "account-check";
+    case "cliente":
+      iconName = "account-child";
       break;
-    case "materias":
-      iconName = "book";
-      break;
-    case "promedios":
-      iconName = "chart-bar";
+    case "cuenta":
+      iconName = "cog-outline";
       break;
     default:
       break;

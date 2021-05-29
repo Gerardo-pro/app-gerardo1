@@ -1,10 +1,21 @@
 import React from 'react';
-import { View, Text } from "react-native";
+import { View } from "react-native";
+
+const list = [
+    {
+      title: 'Appointments',
+      icon: 'av-timer'
+    },
+    {
+      title: 'Trips',
+      icon: 'flight-takeoff'
+    }
+  ]
 
 export default function ProductoBorrar() {
     return (
         <View>
-            <Text>Borrar Productos</Text>
+
         </View>
     );
 }
