@@ -55,6 +55,12 @@ export default function Producto() {
                     containerStyle={styles.btnContainer}
                     onPress={() => navigation.navigate("producto-borrar")}
                 />
+                <Button 
+                    title="Modal de producto"
+                    buttonStyle={styles.btnStyle}
+                    containerStyle={styles.btnContainer}
+                    onPress={() => navigation.navigate("producto-modal")}
+                />
             </View>
 
         </ScrollView>

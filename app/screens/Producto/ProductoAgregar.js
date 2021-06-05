@@ -6,7 +6,9 @@ import ProductoFormulario from "./../../components/Producto/ProductoForm"
 
 export default function ProductoAgregar() {
 
-  <ProductoFormulario />
+  return (
+    <ProductoFormulario />
+);
 
 }
 

@@ -5,6 +5,7 @@ import ProductoAgregar from "../screens/Producto/ProductoAgregar";
 import ProductoBorrar from "../screens/Producto/ProductoBorrar";
 import ProductoDetalle from "../screens/Producto/ProductoDetalle";
 import ProductoEditar from "../screens/Producto/ProductoEditar";
+import ProductoModal from "../screens/Producto/ProductoModal";
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,11 @@ export default function ProductoStack() {
                 name="producto-editar"
                 component={ProductoEditar}
                 options={{title: "EDITAR PRODUCTO"}}
+            />
+            <Stack.Screen 
+                name="producto-modal"
+                component={ProductoModal}
+                options={{title: "PRODUCTO MODAL"}}
             />
         </Stack.Navigator>
     );
