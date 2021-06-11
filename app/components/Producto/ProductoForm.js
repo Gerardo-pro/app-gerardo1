@@ -3,7 +3,7 @@ import { Alert, Modal, Pressable, StyleSheet, View, Text } from "react-native";
 import { Button, Icon, Input } from 'react-native-elements';
 
 
-export default function ProductoForm() {
+export default function ProductoForm(props) {
 
     const [cveProducto, setCveProducto] = useState();
     const [nomProducto, setNomProducto] = useState();
@@ -13,6 +13,7 @@ export default function ProductoForm() {
     return (
 
         <View>
+            <Text style={styles.textTitle}>{props.name}</Text>
             <Input
                 placeholder='Cve. producto'
                 leftIcon={{ type: 'material-community', name: 'key' }}
@@ -72,8 +73,7 @@ export default function ProductoForm() {
       </Pressable> */}
     </View>
 
-      </View>
-    
+    </View>
     );
 }
 

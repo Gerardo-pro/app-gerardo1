@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Producto from "../screens/Producto/Producto";
+import ProductoLista1 from "../screens/Producto/ProductoLista1";
 import ProductoAgregar from "../screens/Producto/ProductoAgregar";
 import ProductoBorrar from "../screens/Producto/ProductoBorrar";
 import ProductoDetalle from "../screens/Producto/ProductoDetalle";
@@ -16,6 +17,11 @@ export default function ProductoStack() {
                 name="producto"
                 component={Producto}
                 options={{title: "CATALOGO DE PRODUCTOS"}}
+            />
+            <Stack.Screen 
+                name="producto-lista1"
+                component={ProductoLista1}
+                options={{title: "CATALOGO DE PRODUCTOS-API"}}
             />
             <Stack.Screen 
                 name="producto-agregar"

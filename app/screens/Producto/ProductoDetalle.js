@@ -3,9 +3,8 @@ import { View, Text } from "react-native";
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { FAB } from 'react-native-elements';
 
-
-export default function ProductoDetalle() {
-
+export default function ProductoDetalle({ route, navigation }) {
+    // const {title} = route.params;
 
     return (
         <View>
@@ -16,7 +15,7 @@ export default function ProductoDetalle() {
             <Card.Divider/>
             <Card.Image source={require('../../../assets/img/photo-1.jpg')}>
                 <Text style={{marginBottom: 10}}>
-                The idea with React Native Elements is more about component structure than actual design.
+                Si llego la fila 
                 </Text>
                 <Button
                 icon={<Icon name='code' color='#ffffff' />}

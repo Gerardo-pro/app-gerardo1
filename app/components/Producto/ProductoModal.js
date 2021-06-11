@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
 import { Alert, Modal, Pressable, StyleSheet, View, Text } from "react-native";
-import { Button, Icon, Input } from 'react-native-elements';
 
+export default function ProductoModal(props) {
 
-export default function ProductoAgregar() {
+    const [modalVisible, setModalVisible] = props.modal1;
 
-    const [cveProducto, setCveProducto] = useState();
-    const [nomProducto, setNomProducto] = useState();
-    const [precio, setPrecio] = useState();
-    const [cantidad, setCantidad] = useState();
-    const [modalVisible, setModalVisible] = useState(false);
     return (
-
-      <div>
 
       <View style={styles.centeredView}>
       <Modal
@@ -26,27 +19,29 @@ export default function ProductoAgregar() {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>{cveProducto}</Text>
-            <Text style={styles.modalText}>{nomProducto}</Text>
-            <Text style={styles.modalText}>{precio}</Text>
-            <Text style={styles.modalText}>{cantidad}</Text>
+            <Text style={styles.modalText}>{props.cve}</Text>
+            <Text style={styles.modalText}>{props.nomvre}</Text>
+            <Text style={styles.modalText}>{props.precio1}</Text>
+            <Text style={styles.modalText}>{props.cantidad1}</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Cerrar modal</Text>
             </Pressable>
           </View>
         </View>
       </Modal>
-      <Pressable
+      {/* <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
+      </Pressable> */}
     </View>
-      </div>
+
+
+
     );
 }
 

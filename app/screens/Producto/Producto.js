@@ -3,6 +3,8 @@ import { Image, StyleSheet, View, ScrollView, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Button, ListItem, Icon } from "react-native-elements";
 
+import ProductoLista from "./../../components/Producto/ProductoLista";
+
 export default function Producto() {
     const navigation = useNavigation();
     return (
@@ -20,15 +22,14 @@ export default function Producto() {
                 source={{ uri: 'https://source.unsplash.com/featured/?{product}' }}
             />
 
-            {list.map((item, i) => (
-                <ListItem key={i} bottomDivider>
-                    <Icon name={item.icon} type="material-community" />
-                    <ListItem.Content>
-                      <ListItem.Title>{item.title}</ListItem.Title>
-                    </ListItem.Content>
-                    <ListItem.Chevron />
-                  </ListItem>
-                ))}
+                <ProductoLista elementos={list}/>
+
+                <Button 
+                    title="Lista de productos - API"
+                    buttonStyle={styles.btnStyle}
+                    containerStyle={styles.btnContainer}
+                    onPress={() => navigation.navigate("producto-lista1")}
+                />
 
                 <Button 
                     title="Agregar producto"
