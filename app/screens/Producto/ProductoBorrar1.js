@@ -1,39 +1,49 @@
-import React, { useState } from 'react';
-import { Alert, Modal, Pressable, StyleSheet, View, Text } from "react-native";
-import { Button, Icon, Input } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/core';
+import React, {useState} from 'react';
+import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
+import { Button, Icon, ListItem } from 'react-native-elements';
+import { ScrollView } from 'react-native-gesture-handler';
 
+import useFetch from '../../hooks/useFetch';
 
-export default function ProductoForm(props) {
-
+export default function ProductoBorrar1({route}) {
+    const{cveProducto}=route.params;
     const [nomProducto, setNomProducto] = useState();
     const [precio, setPrecio] = useState();
     const [cantidad, setCantidad] = useState();
+    const {loading, data: productos} 
+    = useFetch(`http://localhost:3000/productos?filter[where][id]=${cveProducto}`);
+    const navigation = useNavigation();
+    
+    setNomProducto(productos.nomProducto);
+    setPrecio(productos.precio);
+    setPrecio(productos.cantidad);
     return (
 
         <View>
-            <Text style={styles.textTitle}>{props.name}</Text>
-            <Input
-                placeholder='Nombre producto'
+            <Text style={styles.textTitle}>Datos del producto cev: {cveProducto}</Text>
+            <TextInput
+                placeholder={nomProducto}
                 leftIcon={{ type: 'material-community', name: 'cart' }}
                 onChange={(e) => setNomProducto(e.nativeEvent.text)}
             />
-            <Input
-                placeholder='Precio'
+            <TextInput
+                placeholder={precio}
                 leftIcon={{ type: 'material-community', name: 'currency-usd' }}
                 onChange={(e) => setPrecio(e.nativeEvent.text)}
             />
-            <Input
-                placeholder='Cantidad'
+            <TextInput
+                placeholder={cantidad}
                 leftIcon={{ type: 'material-community', name: 'format-list-bulleted-square' }}
                 onChange={(e) => setCantidad(e.nativeEvent.text)}
             />
             <Button 
-                title="Agregar producto"
+                title="Borrar producto"
                 buttonStyle={styles.btnStyle}
                 containerStyle={styles.btnContainer}
                 onPress={() => {
-                  fetch('http://localhost:3000/productos/', {
-                    method: 'POST',
+                  fetch(`http://localhost:3000/productos/${cveProducto}`, {
+                    method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
                     },
@@ -50,10 +60,10 @@ export default function ProductoForm(props) {
                   setCantidad();
                   setCantidad('Escribe la cantidad de productos ...');
                   alert('Producto agregado'+' '+nomProducto+' '+precio+' '+cantidad);
+                  navigation.navigate(producto-lista1);
                 })
                 }}
             />
-
     </View>
     );
 }
@@ -130,3 +140,4 @@ const styles = StyleSheet.create({
         textAlign: "center"
       }
   });
+
