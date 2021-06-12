@@ -1,21 +1,22 @@
 import React from 'react';
 import { View, Text } from "react-native";
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
-import { FAB } from 'react-native-elements';
+import { Card, Button, Icon } from 'react-native-elements'
+import { useNavigation } from "@react-navigation/native";
 
-export default function ProductoDetalle({ route, navigation }) {
-    // const {title} = route.params;
+export default function ProductoDetalle({route }) {
+    const {id, nomProducto, precio, cantidad} = route.params;
 
     return (
         <View>
-            
-
             <Card>
             <Card.Title>HELLO WORLD</Card.Title>
             <Card.Divider/>
             <Card.Image source={require('../../../assets/img/photo-1.jpg')}>
                 <Text style={{marginBottom: 10}}>
-                Si llego la fila 
+                {id}
+                {nomProducto}
+                {precio}
+                {cantidad} 
                 </Text>
                 <Button
                 icon={<Icon name='code' color='#ffffff' />}
