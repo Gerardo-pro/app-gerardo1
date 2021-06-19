@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { Button, Input } from "react-native-elements";
-import { useNavigation } from "@react-navigation/native";
+import { Button, Input } from "react-native-elements"
+export default function productoEditar(){
 
-export default function ProductoEditar() {
-    const navigation = useNavigation();
+
     const [cveProducto, setCveProducto] = useState();
 
     return (
