@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Button, Icon, Input } from "react-native-elements";
 
-export default function ProductoAgregar() {
+export default function ProductoAgregar(props) {
   const [cveProducto, setCveProducto] = useState();
   const [nomProducto, setNomProducto] = useState();
   const [precio, setPrecio] = useState();

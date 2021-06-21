@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text } from "react-native";
-import { Card, Button, Icon } from 'react-native-elements'
-import { useNavigation } from "@react-navigation/native";
+import {Card, Button, Icon } from 'react-native-elements'
+import {FAB} from 'react-native-elements';
+
 
 export default function ProductoDetalle({route }) {
-    const {id, nomProducto, precio, cantidad} = route.params;
-
+   
     return (
         <View>
             <Card>
@@ -13,11 +13,9 @@ export default function ProductoDetalle({route }) {
             <Card.Divider/>
             <Card.Image source={require('../../../assets/img/photo-1.jpg')}>
                 <Text style={{marginBottom: 10}}>
-                {id}
-                {nomProducto}
-                {precio}
-                {cantidad} 
+                ESTA ES DE LAS MEJORES FOTOS 
                 </Text>
+               
                 <Button
                 icon={<Icon name='code' color='#ffffff' />}
                 buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
@@ -27,3 +25,6 @@ export default function ProductoDetalle({route }) {
         </View>
     );
 }
+
+
+
